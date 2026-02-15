@@ -3,7 +3,7 @@ const About = ({ language }) => {
     ru: {
       title: 'О Maxim Coffee',
       description:
-        'Maxim Coffee — это популярный корейский растворимый кофе 3 в 1: кофе, сахар и сливки в одном стике. Каждая порция содержит идеальную комбинацию качественного кофе, сладости и кремовой гладкости. Идеален для тех, кто ценит вкус, удобство и корейское качество.',
+        'Maxim Coffee — это популярный корейский растворимый кофе: кофе, сахар и сливки в одном стике. Каждая порция содержит идеальную комбинацию качественного кофе, сладости и кремовой гладкости. Идеален для тех, кто ценит вкус, удобство и корейское качество.',
       features: [
         { title: 'Оригинальный вкус', desc: 'Подлинный корейский рецепт' },
         { title: 'Быстрое приготовление', desc: 'Просто добавь горячую воду' },
@@ -13,7 +13,7 @@ const About = ({ language }) => {
     uz: {
       title: 'Maxim Coffee haqida',
       description:
-        'Maxim Coffee — mashhur koreys 3 in 1 qahvasi: qahva, shakar va qaymoq bitta stikda. Har bir porsiya sifatli qahva, shirinlik va qaymoqli tekislikning ideal kombinatsiyasini o\'z ichiga oladi. Bu ular tat, qulaylik va koreys sifatini qadrlaydiganlar uchun ideal.',
+        'Maxim Coffee — mashhur koreys qahvasi: qahva, shakar va qaymoq bitta stikda. Har bir porsiya sifatli qahva, shirinlik va qaymoqli tekislikning ideal kombinatsiyasini o\'z ichiga oladi. Bu ular tat, qulaylik va koreys sifatini qadrlaydiganlar uchun ideal.',
       features: [
         { title: 'Asl tat', desc: 'Haqiqiy koreys retsepti' },
         { title: 'Tez tayyorlash', desc: 'Shunchaki issiq suv qo\'shing' },

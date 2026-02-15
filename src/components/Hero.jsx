@@ -1,4 +1,5 @@
 import { ChevronDown } from 'lucide-react'
+import boxWithCoffee from '../assets/box-with-coffee-02.png'
 
 const Hero = ({ language }) => {
   const translations = {
@@ -20,10 +21,18 @@ const Hero = ({ language }) => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
   }
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+    setIsOpen(false)
+  }
+
   return (
     <section
       id="hero"
-      className="relative min-h-screen bg-maxim-yellow flex items-center justify-center overflow-hidden pt-20 pb-20"
+      className="relative min-h-screen w-full bg-maxim-yellow flex items-center justify-center overflow-hidden pt-20 pb-20"
     >
       {/* Steam wave overlay */}
       <div className="absolute top-0 left-0 w-full h-64 pointer-events-none">
@@ -69,28 +78,22 @@ const Hero = ({ language }) => {
             </p>
           </div>
 
-          <button className="bg-maxim-dark hover:bg-maxim-brown text-white font-bold py-4 px-8 md:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg">
+          <button 
+          onClick={() => scrollToSection("contact")}
+          className="bg-maxim-dark hover:bg-maxim-brown text-white font-bold py-4 px-8 md:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg">
             {t.cta}
           </button>
         </div>
 
         {/* Right side - Product Image Placeholder */}
         <div className="flex justify-center items-center animate-float">
-          <div className="relative w-80 h-96 bg-maxim-cream rounded-3xl shadow-2xl flex items-center justify-center border-4 border-maxim-brown/10 overflow-hidden">
-            {/* Yellow box effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-maxim-yellow to-yellow-300 opacity-30"></div>
-            {/* Product box representation */}
-            <div className="relative z-10 text-center">
-              <div className="text-6xl mb-4">☕</div>
-              <p className="text-maxim-dark font-bold text-xl mb-2">MAXIM</p>
-              <p className="text-maxim-brown text-sm">3 in 1 Coffee</p>
-              <div className="mt-6 flex justify-center gap-2">
-                <div className="w-2 h-16 bg-maxim-brown rounded-full"></div>
-                <div className="w-2 h-16 bg-maxim-brown rounded-full"></div>
-                <div className="w-2 h-16 bg-maxim-brown rounded-full"></div>
-              </div>
-            </div>
-          </div>
+          {/* Product box representation */}
+
+            <img
+              src={boxWithCoffee}
+              alt="Maxim Coffee Box"
+              className="w-80 drop-shadow-2xl"
+            />
         </div>
       </div>
 

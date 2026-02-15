@@ -2,10 +2,10 @@ const Pricing = ({ language }) => {
   const translations = {
     ru: {
       title: 'Цена',
-      price: '120 000',
-      currency: 'UZS',
+      price: '250 000',
+      currency: "сом",
       description: 'Коробка 100 стиков',
-      perStick: 'В пересчёте: 1 200 сум за стик',
+      perStick: 'В пересчёте: 2 500 сум за стик',
       features: [
         '✓ 100 стиков кофе',
         '✓ Оригинальный вкус',
@@ -17,10 +17,10 @@ const Pricing = ({ language }) => {
     },
     uz: {
       title: 'Narxi',
-      price: '120 000',
-      currency: 'UZS',
+      price: '250 000',
+      currency: 'so\'m',
       description: '100 stikli quti',
-      perStick: 'Qayish: 1 stik uchun 1 200 so\'m',
+      perStick: 'Qayish: 1 stik uchun 2 500 so\'m',
       features: [
         '✓ 100 stik qahva',
         '✓ Asl tat',
@@ -77,35 +77,9 @@ const Pricing = ({ language }) => {
                 {t.cta}
               </button>
 
-              {/* Note */}
-              <p className="text-center text-sm text-maxim-brown mt-6 px-4 bg-maxim-beige rounded-lg py-3">
-                {t.note}
-              </p>
             </div>
           </div>
 
-          {/* Payment Methods */}
-          <div className="mt-8 text-center">
-            <p className="text-maxim-dark font-semibold mb-4">
-              {language === 'ru'
-                ? 'Способы оплаты:'
-                : 'To\'lov usullari:'}
-            </p>
-            <div className="flex justify-center gap-4 flex-wrap">
-              <button className="bg-white text-maxim-dark px-6 py-2 rounded-full font-bold shadow-md hover:shadow-lg transition-shadow">
-                Наличные
-              </button>
-              <button className="bg-white text-maxim-dark px-6 py-2 rounded-full font-bold shadow-md hover:shadow-lg transition-shadow">
-                Карта
-              </button>
-              <button className="bg-white text-maxim-dark px-6 py-2 rounded-full font-bold shadow-md hover:shadow-lg transition-shadow">
-                Click
-              </button>
-              <button className="bg-white text-maxim-dark px-6 py-2 rounded-full font-bold shadow-md hover:shadow-lg transition-shadow">
-                Payme
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </section>

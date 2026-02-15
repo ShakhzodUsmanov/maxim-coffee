@@ -1,3 +1,8 @@
+import boxWithCoffee from '../assets/box-with-coffee.png'
+import box from "../assets/box.jpg"
+import coffeeSticks from "../assets/coffee-stick.jpg"
+import frontBoxWithCoffee from "../assets/front-box-with-coffee.jpg"
+
 const Gallery = ({ language }) => {
   const translations = {
     ru: {
@@ -13,10 +18,10 @@ const Gallery = ({ language }) => {
   const t = translations[language]
 
   const items = [
-    { id: 1, emoji: '📦', label: language === 'ru' ? 'Коробка 100 стиков' : '100 stikli quti' },
-    { id: 2, emoji: '☕', label: language === 'ru' ? 'Кофе с пеной' : 'Kopiyka bilan qahva' },
-    { id: 3, emoji: '✨', label: language === 'ru' ? 'Стики' : 'Stiklar' },
-    { id: 4, emoji: '🎁', label: language === 'ru' ? 'Подарок' : 'Sovg\'a' },
+    { id: 1, img: box, emoji: '📦', label: language === 'ru' ? 'Коробка 100 стиков' : '100 stikli quti' },
+    { id: 2, img: boxWithCoffee, emoji: '☕', label: language === 'ru' ? 'Кофе с пеной' : 'Kopiyka bilan qahva' },
+    { id: 3, img: coffeeSticks, emoji: '✨', label: language === 'ru' ? 'Стики' : 'Stiklar' },
+    { id: 4, img: frontBoxWithCoffee, emoji: '🎁', label: language === 'ru' ? 'Подарок' : 'Sovg\'a' },
   ]
 
   return (
@@ -41,6 +46,18 @@ const Gallery = ({ language }) => {
             >
               {/* Image Placeholder with Gradient */}
               <div className="w-full h-full bg-gradient-to-br from-maxim-yellow/80 to-maxim-brown/20 flex items-center justify-center group-hover:from-maxim-yellow/100 transition-all duration-300">
+                <img
+                  src={item.img}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                />
+              </div>
+
+              {console.log(item.img)
+              }
+
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-maxim-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-6xl mb-4">{item.emoji}</div>
                   <p className="font-bold text-maxim-dark text-center px-2">
@@ -48,31 +65,24 @@ const Gallery = ({ language }) => {
                   </p>
                 </div>
               </div>
-
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-maxim-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <button className="bg-maxim-yellow text-maxim-dark px-6 py-2 rounded-full font-bold hover:bg-maxim-brown hover:text-white transition-all">
-                  {language === 'ru' ? 'Смотреть' : 'Ko\'rish'}
-                </button>
-              </div>
             </div>
           ))}
         </div>
 
-        {/* Instagram CTA */}
+        {/* Telegram CTA */}
         <div className="text-center mt-12">
           <p className="text-maxim-dark mb-4">
             {language === 'ru'
-              ? 'Еще фото в нашем Instagram'
-              : 'Bizning Instagramda ko\'proq rasmlar'}
+              ? 'Еще фото в нашем Telegram'
+              : 'Bizning Telegram ko\'proq rasmlar'}
           </p>
           <a
-            href="https://instagram.com"
+            href="https://t.me/maxcofuz"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-gradient-to-r from-maxim-yellow to-maxim-brown text-white font-bold py-3 px-8 rounded-full hover:shadow-lg transition-shadow"
           >
-            @MaximCoffee
+            @Maxcofuz
           </a>
         </div>
       </div>

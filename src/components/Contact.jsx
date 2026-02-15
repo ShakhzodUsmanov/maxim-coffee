@@ -5,7 +5,7 @@ const Contact = ({ language }) => {
     ru: {
       title: 'Контактная информация',
       subtitle: 'Свяжитесь с нами для заказов и информации',
-      phone: '+998 (99) 123-45-67',
+      phone: '+998 (94) 005-53-00',
       address: language === 'ru' ? 'Ташкент, Узбекистан' : 'Toshkent, Oʻzbekiston',
       contactUs: 'Написать нам',
       order: 'Сделать заказ',
@@ -13,7 +13,7 @@ const Contact = ({ language }) => {
     uz: {
       title: 'Aloqa ma\'lumotlari',
       subtitle: 'Buyurtmalar va ma\'lumot uchun biz bilan bog\'lanish',
-      phone: '+998 (99) 123-45-67',
+      phone: '+998 (94) 005-53-00',
       address: 'Toshkent, Oʻzbekiston',
       contactUs: 'Bizga yozing',
       order: 'Buyurtma berish',
@@ -44,13 +44,13 @@ const Contact = ({ language }) => {
               {language === 'ru' ? 'Телефон' : 'Telefon'}
             </h3>
             <a
-              href="tel:+998991234567"
+              href="tel:+998940055300"
               className="text-xl font-bold text-maxim-brown hover:text-maxim-dark transition-colors mb-4 block"
             >
               {t.phone}
             </a>
             <a
-              href="tel:+998991234567"
+              href="tel:+998940055300"
               className="inline-block bg-maxim-yellow text-maxim-dark font-bold py-2 px-6 rounded-full hover:bg-maxim-brown hover:text-white transition-all"
             >
               {t.order}
