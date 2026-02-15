@@ -3,6 +3,8 @@ import box from "../assets/box.jpg"
 import coffeeSticks from "../assets/coffee-stick.jpg"
 import frontBoxWithCoffee from "../assets/front-box-with-coffee.jpg"
 
+import { Gift, Package, Coffee, WandSparkles } from "lucide-react"
+
 const Gallery = ({ language }) => {
   const translations = {
     ru: {
@@ -18,10 +20,10 @@ const Gallery = ({ language }) => {
   const t = translations[language]
 
   const items = [
-    { id: 1, img: box, emoji: '📦', label: language === 'ru' ? 'Коробка 100 стиков' : '100 stikli quti' },
-    { id: 2, img: boxWithCoffee, emoji: '☕', label: language === 'ru' ? 'Кофе с пеной' : 'Kopiyka bilan qahva' },
-    { id: 3, img: coffeeSticks, emoji: '✨', label: language === 'ru' ? 'Стики' : 'Stiklar' },
-    { id: 4, img: frontBoxWithCoffee, emoji: '🎁', label: language === 'ru' ? 'Подарок' : 'Sovg\'a' },
+    { id: 1, img: box, emoji: Package, label: language === 'ru' ? 'Коробка 100 стиков' : '100 stikli quti' },
+    { id: 2, img: boxWithCoffee, emoji: Coffee, label: language === 'ru' ? 'Кофе с пеной' : 'Kopiyka bilan qahva' },
+    { id: 3, img: coffeeSticks, emoji: WandSparkles, label: language === 'ru' ? 'Стики' : 'Stiklar' },
+    { id: 4, img: frontBoxWithCoffee, emoji: Gift, label: language === 'ru' ? 'Подарок' : 'Sovg\'a' },
   ]
 
   return (
@@ -39,8 +41,9 @@ const Gallery = ({ language }) => {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {items.map((item) => (
-            <div
+          {items.map((item) => {
+            const IconComponent = item.emoji
+            return (<div
               key={item.id}
               className="relative group overflow-hidden rounded-2xl shadow-lg aspect-square bg-white cursor-pointer"
             >
@@ -53,20 +56,17 @@ const Gallery = ({ language }) => {
                 />
               </div>
 
-              {console.log(item.img)
-              }
-
               {/* Hover Overlay */}
               <div className="absolute inset-0 bg-maxim-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">{item.emoji}</div>
-                  <p className="font-bold text-maxim-dark text-center px-2">
+                <div className="flex flex-col items-center">
+                  <IconComponent size={100} className="text-9xl mb-2"/>
+                  <p className="text-2xl font-bold text-maxim-dark text-center px-2">
                     {item.label}
                   </p>
                 </div>
               </div>
-            </div>
-          ))}
+            </div>)
+          })}
         </div>
 
         {/* Telegram CTA */}
