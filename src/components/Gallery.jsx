@@ -3,7 +3,7 @@ import coffeeCup from "../assets/coffee-cup.png"
 import coffeeSticks from "../assets/sticks.jpg"
 import presentBox from "../assets/presentBox.png"
 
-import { Gift, Package, Coffee, WandSparkles } from "lucide-react"
+import { FaGift, FaBox, FaMugHot, FaWandMagicSparkles  } from "react-icons/fa6";
 
 const Gallery = ({ language }) => {
   const translations = {
@@ -20,10 +20,10 @@ const Gallery = ({ language }) => {
   const t = translations[language]
 
   const items = [
-    { id: 1, img: boxWith100, emoji: Package, label: language === 'ru' ? 'Коробка 100 стиков' : '100 stikli quti' },
-    { id: 2, img: coffeeCup, emoji: Coffee, label: language === 'ru' ? 'Кофе с пеной' : 'Kopiyka bilan qahva' },
-    { id: 3, img: coffeeSticks, emoji: WandSparkles, label: language === 'ru' ? 'Стики' : 'Stiklar' },
-    { id: 4, img: presentBox, emoji: Gift, label: language === 'ru' ? 'Подарок' : 'Sovg\'a' },
+    { id: 1, img: boxWith100, emoji: FaBox, label: language === 'ru' ? 'Коробка 100 стиков' : '100 stikli quti' },
+    { id: 2, img: coffeeCup, emoji: FaMugHot, label: language === 'ru' ? 'Кофе с пеной' : 'Kopiyka bilan qahva' },
+    { id: 3, img: coffeeSticks, emoji: FaWandMagicSparkles, label: language === 'ru' ? 'Стики' : 'Stiklar' },
+    { id: 4, img: presentBox, emoji: FaGift, label: language === 'ru' ? 'Подарок' : 'Sovg\'a' },
   ]
 
   return (

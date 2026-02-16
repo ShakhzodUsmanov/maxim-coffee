@@ -1,4 +1,4 @@
-import { Phone, MessageCircle } from 'lucide-react'
+import { FaPhone, FaTelegram  } from "react-icons/fa6"
 
 const Contact = ({ language }) => {
   const translations = {
@@ -39,7 +39,7 @@ const Contact = ({ language }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Phone Contact */}
           <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-maxim-yellow/30 text-center">
-            <Phone className="w-12 h-12 text-maxim-brown mx-auto mb-4" />
+            <FaPhone className="w-12 h-12 text-maxim-brown mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-maxim-dark mb-2">
               {language === 'ru' ? 'Телефон' : 'Telefon'}
             </h3>
@@ -59,7 +59,7 @@ const Contact = ({ language }) => {
 
           {/* Telegram/WhatsApp Contact */}
           <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-maxim-yellow/30 text-center">
-            <MessageCircle className="w-12 h-12 text-maxim-brown mx-auto mb-4" />
+            <FaTelegram className="w-12 h-12 text-maxim-brown mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-maxim-dark mb-2">
               {language === 'ru' ? 'Мессенджеры' : 'Xabarlar'}
             </h3>

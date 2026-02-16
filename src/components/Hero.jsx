@@ -1,4 +1,4 @@
-import { ChevronDown } from 'lucide-react'
+import { FaAngleDown } from "react-icons/fa6";
 import boxWithCoffee from '../assets/hero-box.png'
 
 const Hero = ({ language }) => {
@@ -102,7 +102,7 @@ const Hero = ({ language }) => {
         onClick={scrollDown}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-maxim-dark z-20"
       >
-        <ChevronDown size={32} />
+        <FaAngleDown size={32} />
       </button>
     </section>
   )

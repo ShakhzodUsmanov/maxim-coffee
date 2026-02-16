@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { FaBars, FaXmark  } from "react-icons/fa6";
 
 const Header = ({ language, toggleLanguage }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -98,7 +98,7 @@ const Header = ({ language, toggleLanguage }) => {
               className="md:hidden text-maxim-dark"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <FaXmark size={24} /> : <FaBars size={24} />}
             </button>
           </div>
         </div>
