@@ -1,7 +1,7 @@
-import boxWithCoffee from '../assets/box-with-coffee.png'
-import box from "../assets/box.jpg"
-import coffeeSticks from "../assets/coffee-stick.jpg"
-import frontBoxWithCoffee from "../assets/front-box-with-coffee.jpg"
+import boxWith100 from '../assets/box-with-100.jpg'
+import coffeeCup from "../assets/coffee-cup.png"
+import coffeeSticks from "../assets/sticks.jpg"
+import presentBox from "../assets/presentBox.png"
 
 import { Gift, Package, Coffee, WandSparkles } from "lucide-react"
 
@@ -20,10 +20,10 @@ const Gallery = ({ language }) => {
   const t = translations[language]
 
   const items = [
-    { id: 1, img: box, emoji: Package, label: language === 'ru' ? 'Коробка 100 стиков' : '100 stikli quti' },
-    { id: 2, img: boxWithCoffee, emoji: Coffee, label: language === 'ru' ? 'Кофе с пеной' : 'Kopiyka bilan qahva' },
+    { id: 1, img: boxWith100, emoji: Package, label: language === 'ru' ? 'Коробка 100 стиков' : '100 stikli quti' },
+    { id: 2, img: coffeeCup, emoji: Coffee, label: language === 'ru' ? 'Кофе с пеной' : 'Kopiyka bilan qahva' },
     { id: 3, img: coffeeSticks, emoji: WandSparkles, label: language === 'ru' ? 'Стики' : 'Stiklar' },
-    { id: 4, img: frontBoxWithCoffee, emoji: Gift, label: language === 'ru' ? 'Подарок' : 'Sovg\'a' },
+    { id: 4, img: presentBox, emoji: Gift, label: language === 'ru' ? 'Подарок' : 'Sovg\'a' },
   ]
 
   return (
@@ -59,7 +59,7 @@ const Gallery = ({ language }) => {
               {/* Hover Overlay */}
               <div className="absolute inset-0 bg-maxim-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <div className="flex flex-col items-center">
-                  <IconComponent size={100} className="text-9xl mb-2"/>
+                  <IconComponent size={100} className="text-9xl mb-2" />
                   <p className="text-2xl font-bold text-maxim-dark text-center px-2">
                     {item.label}
                   </p>

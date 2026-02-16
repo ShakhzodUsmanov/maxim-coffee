@@ -1,5 +1,5 @@
 import { ChevronDown } from 'lucide-react'
-import boxWithCoffee from '../assets/box-with-coffee-02.png'
+import boxWithCoffee from '../assets/hero-box.png'
 
 const Hero = ({ language }) => {
   const translations = {
@@ -92,7 +92,7 @@ const Hero = ({ language }) => {
             <img
               src={boxWithCoffee}
               alt="Maxim Coffee Box"
-              className="w-80 drop-shadow-2xl"
+              className="w-84 md:w-90 drop-shadow-xl"
             />
         </div>
       </div>
