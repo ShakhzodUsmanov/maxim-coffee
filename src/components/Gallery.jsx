@@ -57,10 +57,10 @@ const Gallery = ({ language }) => {
               </div>
 
               {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-maxim-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="absolute inset-0 bg-maxim-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-maxim-cream">
                 <div className="flex flex-col items-center">
                   <IconComponent size={100} className="text-9xl mb-2" />
-                  <p className="text-2xl font-bold text-maxim-dark text-center px-2">
+                  <p className="text-2xl font-bold text-center px-2">
                     {item.label}
                   </p>
                 </div>
