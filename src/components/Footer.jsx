@@ -70,7 +70,7 @@ const Footer = ({ language }) => {
                 <RiTelegram2Fill className="w-6 h-6" />
               </a>
               <a
-                href="https://www.instagram.com/maxkoff.uz?igsh=bXl4YWM0cTVyZWZv&utm_source=qr"
+                href="https://www.instagram.com/maxkoff.uz/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram Maxkoff"
