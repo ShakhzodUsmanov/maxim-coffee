@@ -80,8 +80,6 @@ const Contact = ({ language }) => {
               </a>
               <a
                 href="https://www.instagram.com/maxkoff.uz/"
-                target="_blank"
-                rel="noopener noreferrer"
                 aria-label="Instagram Maxkoff"
                 className="flex items-center justify-center gap-3 bg-gradient-to-br from-pink-500 via-purple-500 to-orange-400 text-white font-bold p-2 pr-4 rounded-full hover:shadow-lg transition-shadow"
               >  
