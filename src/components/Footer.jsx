@@ -1,3 +1,6 @@
+import { FaPhone, FaInstagram  } from "react-icons/fa6"
+import { RiTelegram2Fill } from "react-icons/ri";
+
 const Footer = ({ language }) => {
   const translations = {
     ru: {
@@ -58,28 +61,31 @@ const Footer = ({ language }) => {
             </h4>
             <div className="flex gap-4">
               <a
-                href="https://t.me/maximcoffee"
+                href="https://t.me/maxkoffuz"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Telegram Maxkoff"
                 className="w-10 h-10 bg-maxim-yellow rounded-full flex items-center justify-center text-maxim-dark font-bold hover:bg-maxim-brown transition-colors"
               >
-                ✓
+                <RiTelegram2Fill className="w-6 h-6" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/maxkoff.uz?igsh=bXl4YWM0cTVyZWZv&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram Maxkoff"
                 className="w-10 h-10 bg-maxim-yellow rounded-full flex items-center justify-center text-maxim-dark font-bold hover:bg-maxim-brown transition-colors"
               >
-                f
+                <FaInstagram className="w-6 h-6" />
               </a>
               <a
-                href="https://wa.me/998991234567"
+                href="tel:+998930930053"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Phone Maxkoff"
                 className="w-10 h-10 bg-maxim-yellow rounded-full flex items-center justify-center text-maxim-dark font-bold hover:bg-maxim-brown transition-colors"
               >
-                ✓
+                <FaPhone className="w-5 h-5" />
               </a>
             </div>
           </div>
