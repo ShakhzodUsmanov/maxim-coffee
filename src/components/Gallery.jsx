@@ -82,7 +82,7 @@ const Gallery = ({ language }) => {
             rel="noopener noreferrer"
             className="inline-block bg-gradient-to-r from-maxim-yellow to-maxim-brown text-white font-bold py-3 px-8 rounded-full hover:shadow-lg transition-shadow"
           >
-            @Maxcofuz
+            @MAXKOFFUZ
           </a>
         </div>
       </div>
