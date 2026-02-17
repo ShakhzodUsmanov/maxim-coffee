@@ -79,7 +79,7 @@ const Contact = ({ language }) => {
                 <FaTelegram className="w-10 h-10 text-white" /> Telegram  
               </a>
               <a
-                href="https://www.instagram.com/maxkoff.uz/"
+                href="https://instagram.com/maxkoff.uz"
                 aria-label="Instagram Maxkoff"
                 className="flex items-center justify-center gap-3 bg-gradient-to-br from-pink-500 via-purple-500 to-orange-400 text-white font-bold p-2 pr-4 rounded-full hover:shadow-lg transition-shadow"
               >  
