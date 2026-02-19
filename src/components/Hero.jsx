@@ -78,9 +78,9 @@ const Hero = ({ language }) => {
             </p>
           </div>
 
-          <button 
-          onClick={() => scrollToSection("contact")}
-          className="bg-maxim-dark hover:bg-maxim-brown text-white font-bold py-4 px-8 md:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg">
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="bg-maxim-dark hover:bg-maxim-brown text-white font-bold py-4 px-8 md:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg">
             {t.cta}
           </button>
         </div>
@@ -89,11 +89,14 @@ const Hero = ({ language }) => {
         <div className="flex justify-center items-center animate-float">
           {/* Product box representation */}
 
-            <img
-              src={boxWithCoffee}
-              alt="Maxim Coffee Box"
-              className="w-84 md:w-90 drop-shadow-xl"
-            />
+          <img
+            src={boxWithCoffee}
+            alt="Maxim Coffee Box"
+            width="600"
+            height="600"
+            className="w-84 md:w-90 drop-shadow-xl"
+          />
+
         </div>
       </div>
 
