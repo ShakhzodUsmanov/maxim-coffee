@@ -1,5 +1,5 @@
 import { FaAngleDown } from "react-icons/fa6";
-import boxWithCoffee from '../assets/hero-box.png'
+import boxWithCoffee from '../assets/hero-box.webp'
 
 const Hero = ({ language }) => {
   const translations = {

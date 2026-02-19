@@ -1,7 +1,7 @@
-import boxWith100 from '../assets/box-with-100.jpg'
-import coffeeCup from "../assets/coffee-cup.png"
-import coffeeSticks from "../assets/sticks.jpg"
-import presentBox from "../assets/presentBox.png"
+import boxWith100 from '../assets/box-with-100.webp'
+import coffeeCup from "../assets/coffee-cup.webp"
+import coffeeSticks from "../assets/sticks.webp"
+import presentBox from "../assets/presentBox.webp"
 
 import { FaGift, FaBox, FaMugHot, FaWandMagicSparkles  } from "react-icons/fa6";
 
