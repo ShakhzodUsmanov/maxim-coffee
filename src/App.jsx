@@ -17,7 +17,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-maxim-cream">
+    <main className="min-h-screen bg-maxim-cream">
       <Header language={language} toggleLanguage={toggleLanguage} />
       <Hero language={language} />
       <About language={language} />
@@ -26,7 +26,7 @@ function App() {
       <Pricing language={language} />
       <Contact language={language} />
       <Footer language={language} />
-    </div>
+    </main>
   )
 }
 

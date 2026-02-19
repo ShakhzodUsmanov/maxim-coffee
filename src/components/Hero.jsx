@@ -80,6 +80,7 @@ const Hero = ({ language }) => {
 
           <button
             onClick={() => scrollToSection("contact")}
+            aria-label="Scroll to contact section"
             className="bg-maxim-dark hover:bg-maxim-brown text-white font-bold py-4 px-8 md:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg">
             {t.cta}
           </button>
@@ -104,6 +105,7 @@ const Hero = ({ language }) => {
       <button
         onClick={scrollDown}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-maxim-dark z-20"
+        aria-label="Scroll down"
       >
         <FaAngleDown size={32} />
       </button>

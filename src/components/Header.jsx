@@ -61,6 +61,7 @@ const Header = ({ language, toggleLanguage }) => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
+                aria-label={`Scroll to ${link.label} section`}
                 className="text-maxim-dark font-semibold hover:text-maxim-brown transition-colors duration-200"
               >
                 {link.label}

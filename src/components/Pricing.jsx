@@ -73,7 +73,9 @@ const Pricing = ({ language }) => {
               </ul>
 
               {/* CTA Button */}
-              <button className="w-full bg-maxim-dark hover:bg-maxim-brown text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 text-lg shadow-lg">
+              <button 
+              aria-label="Order now"
+              className="w-full bg-maxim-dark hover:bg-maxim-brown text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 text-lg shadow-lg">
                 {t.cta}
               </button>
 
