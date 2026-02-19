@@ -3,7 +3,7 @@ import coffeeCup from "../assets/coffee-cup.webp"
 import coffeeSticks from "../assets/sticks.webp"
 import presentBox from "../assets/presentBox.webp"
 
-import { FaGift, FaBox, FaMugHot, FaWandMagicSparkles  } from "react-icons/fa6";
+import { FaGift, FaBox, FaMugHot, FaWandMagicSparkles } from "react-icons/fa6";
 
 const Gallery = ({ language }) => {
   const translations = {
@@ -51,7 +51,9 @@ const Gallery = ({ language }) => {
               <div className="w-full h-full bg-gradient-to-br from-maxim-yellow/80 to-maxim-brown/20 flex items-center justify-center group-hover:from-maxim-yellow/100 transition-all duration-300">
                 <img
                   src={item.img}
-                  alt=""
+                  alt={item.label}
+                  width="300"
+                  height="300"
                   className="absolute inset-0 w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                 />
               </div>

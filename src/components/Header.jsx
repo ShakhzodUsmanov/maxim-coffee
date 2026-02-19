@@ -73,6 +73,7 @@ const Header = ({ language, toggleLanguage }) => {
             <div className="flex space-x-2 bg-white rounded-lg p-1">
               <button
                 onClick={() => toggleLanguage('ru')}
+                aria-label="Русский язык"
                 className={`px-3 py-1 rounded font-semibold transition-colors ${
                   language === 'ru'
                     ? 'bg-maxim-brown text-white'
@@ -83,6 +84,7 @@ const Header = ({ language, toggleLanguage }) => {
               </button>
               <button
                 onClick={() => toggleLanguage('uz')}
+                aria-label="O'zbek tili"
                 className={`px-3 py-1 rounded font-semibold transition-colors ${
                   language === 'uz'
                     ? 'bg-maxim-brown text-white'
@@ -97,6 +99,7 @@ const Header = ({ language, toggleLanguage }) => {
             <button
               className="md:hidden text-maxim-dark"
               onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
             >
               {isOpen ? <FaXmark size={24} /> : <FaBars size={24} />}
             </button>
