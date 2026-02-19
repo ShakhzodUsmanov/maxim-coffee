@@ -4,12 +4,12 @@ import boxWithCoffee from '../assets/hero-box.webp'
 const Hero = ({ language }) => {
   const translations = {
     ru: {
-      headline: 'Maxim Coffee 3 в 1',
+      headline: 'Maxim Coffee 3 в 1 уже Ташкенте',
       subtitle: 'настоящий вкус корейского кофе',
       cta: 'Купить сейчас',
     },
     uz: {
-      headline: 'Maxim Coffee 3 in 1',
+      headline: 'Maxim Coffee 3 in 1 Toshkentda',
       subtitle: 'haqiqiy koreys qahvasi',
       cta: 'Hozir sotib olish',
     },
@@ -104,7 +104,7 @@ const Hero = ({ language }) => {
       {/* Scroll indicator */}
       <button
         onClick={scrollDown}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-maxim-dark z-20"
+        className="absolute bottom-8 inset-x-0 flex justify-center z-20 animate-bounce text-maxim-dark"
         aria-label="Scroll down"
       >
         <FaAngleDown size={32} />
