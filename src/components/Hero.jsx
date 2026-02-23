@@ -26,7 +26,6 @@ const Hero = ({ language }) => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
-    setIsOpen(false)
   }
 
   return (

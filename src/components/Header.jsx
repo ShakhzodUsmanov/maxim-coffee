@@ -50,9 +50,9 @@ const Header = ({ language, toggleLanguage }) => {
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl md:text-3xl font-bold text-maxim-dark">
+            <div className="text-2xl md:text-3xl font-bold text-maxim-dark">
               {t.logo}
-            </h1>
+            </div>
           </div>
 
           {/* Desktop Navigation */}

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Header from './components/Header'
 import Hero from './components/Hero'
@@ -15,6 +15,10 @@ function App() {
   const toggleLanguage = (lang) => {
     setLanguage(lang)
   }
+
+  useEffect(() => {
+    document.documentElement.lang = language === 'ru' ? 'ru' : 'uz'
+  }, [language])
 
   return (
     <main className="min-h-screen bg-maxim-cream">
