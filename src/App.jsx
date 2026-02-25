@@ -3,7 +3,6 @@ import './App.css'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
-import Advantages from './components/Advantages'
 import Gallery from './components/Gallery'
 import Pricing from './components/Pricing'
 import Contact from './components/Contact'
@@ -25,9 +24,8 @@ function App() {
       <Header language={language} toggleLanguage={toggleLanguage} />
       <Hero language={language} />
       <About language={language} />
-      <Advantages language={language} />
+      <Pricing language={language} />               
       <Gallery language={language} />
-      <Pricing language={language} />
       <Contact language={language} />
       <Footer language={language} />
     </main>

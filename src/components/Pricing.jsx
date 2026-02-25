@@ -1,34 +1,66 @@
-const Pricing = ({ language }) => {
+import sticks250 from '../assets/sticks-250.webp'
+import sticks100 from '../assets/sticks-100.webp'
+import stick1 from '../assets/stick-1.webp'
+
+const Advantages = ({ language }) => {
   const translations = {
     ru: {
-      title: 'Цена',
-      price: '250 000',
-      currency: "сом",
-      description: 'Коробка 100 стиков',
-      perStick: 'В пересчёте: 2 500 сум за стик',
-      features: [
-        '✓ 100 стиков кофе',
-        '✓ Оригинальный вкус',
-        '✓ Длительный срок хранения',
-        '✓ Идеально для офиса',
+      title: 'Цены Maxim',
+      subtitle: 'Выберите удобный формат и наслаждайтесь любимым кофе каждый день',
+      cards: [
+        {
+          sticks: '250 стиков',
+          price: '550 000 сум',
+          imageAlt: 'Упаковка на 250 стиков',
+          imageUrl: sticks250,
+          badge: 'Выгодно',
+        },
+        {
+          sticks: '100 стиков',
+          price: '240 000 сум',
+          imageAlt: 'Упаковка на 100 стиков',
+          imageUrl: sticks100,
+          badge: 'Популярный',
+        },
+        {
+          sticks: '1 стик',
+          price: '2 500 сум',
+          imageAlt: 'Один стик Maxim',
+          imageUrl: stick1,
+          badge: 'Пробный',
+        },
       ],
-      cta: 'Заказать',
-      note: 'Доставка по Ташкенту бесплатно при заказе от 2 коробок',
+      perText: 'за упаковку',
+      perOneText: 'за 1 стик',
     },
     uz: {
-      title: 'Narxi',
-      price: '250 000',
-      currency: 'so\'m',
-      description: '100 stikli quti',
-      perStick: 'Qayish: 1 stik uchun 2 500 so\'m',
-      features: [
-        '✓ 100 stik qahva',
-        '✓ Asl tat',
-        '✓ Uzoq saqlash muddati',
-        '✓ Ofis uchun ideal',
+      title: 'Maxim narxlari',
+      subtitle: 'Qulay formatni tanlang va har kuni sevimli qahvangizdan bahramand bo‘ling',
+      cards: [
+        {
+          sticks: '250 ta stik',
+          price: '550 000 soʻm',
+          imageAlt: '250 ta stik qadoq',
+          imageUrl: sticks250,
+          badge: 'Foydali',
+        },
+        {
+          sticks: '100 ta stik',
+          price: '240 000 soʻm',
+          imageAlt: '100 ta stik qadoq',
+          imageUrl: sticks100,
+          badge: 'Mashhur',
+        },
+        {
+          sticks: '1 ta stik',
+          price: '2 500 soʻm',
+          imageAlt: 'Bitta Maxim stiki',
+          imageUrl: stick1,
+          badge: 'Sinab ko‘rish uchun',
+        },
       ],
-      cta: 'Buyurtma berish',
-      note: '2 ta quti va undan ortiq buyurtmalarda Toshkentga bepul yetkazib berish',
+      perText: 'qadoq uchun',
+      perOneText: '1 stik uchun',
     },
   }
 
@@ -36,56 +68,51 @@ const Pricing = ({ language }) => {
 
   return (
     <section
-      id="pricing"
-      className="py-16 md:py-24 bg-maxim-yellow px-4 sm:px-6 lg:px-8"
+      id="advantages"
+      className="py-16 md:py-24 bg-gradient-to-b bg-maxim-yellow px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-maxim-dark mb-12 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-maxim-dark text-center">
           {t.title}
         </h2>
+        <p className="text-maxim-brown text-center mt-4 mb-12 md:text-lg max-w-3xl mx-auto">
+          {t.subtitle}
+        </p>
 
-        {/* Pricing Card */}
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-maxim-cream rounded-3xl shadow-2xl overflow-hidden">
-            {/* Price Header */}
-            <div className="bg-gradient-to-r from-maxim-brown to-maxim-dark text-white p-8 md:p-12 text-center">
-              <p className="text-lg mb-2">{t.description}</p>
-              <div className="flex items-baseline justify-center gap-2">
-                <span className="text-6xl md:text-7xl font-bold">
-                  {t.price}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {t.cards.map((card, index) => (
+            <article
+              key={index}
+              className={` bg-maxim-cream rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl `}
+            >
+              <div className="relative">
+                <img
+                  src={card.imageUrl}
+                  alt={card.imageAlt}
+                  className="w-full h-52 object-cover bg-maxim-brown/10"
+                />
+                <span className="absolute top-4 left-4 bg-maxim-dark text-maxim-cream text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">
+                  {card.badge}
                 </span>
-                <span className="text-2xl">{t.currency}</span>
               </div>
-              <p className="text-sm mt-4 text-gray-200">{t.perStick}</p>
-            </div>
 
-            {/* Features */}
-            <div className="p-8 md:p-12">
-              <ul className="space-y-4 mb-8">
-                {t.features.map((feature, index) => (
-                  <li
-                    key={index}
-                    className="text-lg text-maxim-dark font-semibold"
-                  >
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+              <div className="p-5 md:p-6">
 
-              {/* CTA Button */}
-              <button 
-              aria-label="Order now"
-              className="w-full bg-maxim-dark hover:bg-maxim-brown text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 text-lg shadow-lg">
-                {t.cta}
-              </button>
-
-            </div>
-          </div>
-
+                <div className="flex md:flex-col-reverse items-end justify-between gap-2">
+                  <p className="text-3xl lg:text-4xl font-extrabold text-maxim-dark leading-none">
+                    {card.price}
+                  </p>
+                  <p className="text-xs md:text-sm text-maxim-brown font-semibold uppercase tracking-wide text-right">
+                    {card.imageAlt}
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
   )
 }
 
-export default Pricing
+export default Advantages
