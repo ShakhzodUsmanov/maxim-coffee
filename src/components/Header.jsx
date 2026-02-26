@@ -9,7 +9,6 @@ const Header = ({ language, toggleLanguage }) => {
       logo: 'MAXIM',
       home: 'Главная',
       about: 'О продукте',
-      advantages: 'Преимущества',
       gallery: 'Галерея',
       pricing: 'Цена',
       contact: 'Контакты',
@@ -18,7 +17,6 @@ const Header = ({ language, toggleLanguage }) => {
       logo: 'MAXIM',
       home: 'Bosh sahifa',
       about: 'Mahsulot haqida',
-      advantages: 'Afzalliklari',
       gallery: 'Galereya',
       pricing: 'Narxi',
       contact: 'Kontaktlar',
@@ -30,7 +28,6 @@ const Header = ({ language, toggleLanguage }) => {
   const navLinks = [
     { label: t.home, id: 'hero' },
     { label: t.about, id: 'about' },
-    { label: t.advantages, id: 'advantages' },
     { label: t.gallery, id: 'gallery' },
     { label: t.pricing, id: 'pricing' },
     { label: t.contact, id: 'contact' },

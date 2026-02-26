@@ -2,7 +2,7 @@ import sticks250 from '../assets/sticks-250.webp'
 import sticks100 from '../assets/sticks-100.webp'
 import stick1 from '../assets/stick-1.webp'
 
-const Advantages = ({ language }) => {
+const Pricing = ({ language }) => {
   const translations = {
     ru: {
       title: 'Цены Maxim',
@@ -68,7 +68,7 @@ const Advantages = ({ language }) => {
 
   return (
     <section
-      id="advantages"
+      id="pricing"
       className="py-16 md:py-24 bg-gradient-to-b bg-maxim-yellow px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-6xl mx-auto">
@@ -115,4 +115,4 @@ const Advantages = ({ language }) => {
   )
 }
 
-export default Advantages
+export default Pricing
