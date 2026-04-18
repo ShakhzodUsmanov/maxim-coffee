@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const About = ({ language }) => {
   const translations = {
     ru: {
@@ -30,29 +32,45 @@ const About = ({ language }) => {
       className="py-16 md:py-24 bg-maxim-cream px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-maxim-dark mb-6 text-center">
+        <motion.h2 
+          className="text-4xl md:text-5xl font-bold text-maxim-dark mb-6 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           {t.title}
-        </h2>
+        </motion.h2>
 
         {/* Main Content Block */}
-        <div className="bg-gradient-to-br from-maxim-beige to-maxim-cream rounded-3xl p-8 md:p-12 shadow-lg mb-12">
+        <motion.div 
+          className="bg-gradient-to-br from-maxim-beige to-maxim-cream rounded-3xl p-8 md:p-12 shadow-lg mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <p className="text-lg md:text-xl text-maxim-dark leading-relaxed">
             {t.description}
           </p>
-        </div>
+        </motion.div>
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {t.features.map((feature, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-maxim-yellow/30"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 * index }}
             >
               <h3 className="text-xl md:text-2xl font-bold text-maxim-dark mb-3">
                 {feature.title}
               </h3>
               <p className="text-maxim-brown">{feature.desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

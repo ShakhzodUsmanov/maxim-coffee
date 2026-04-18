@@ -1,5 +1,6 @@
 import { FaAngleDown } from "react-icons/fa6";
 import boxWithCoffee from '../assets/hero-box.webp'
+import { motion } from 'framer-motion';
 
 const Hero = ({ language }) => {
   const translations = {
@@ -67,7 +68,12 @@ const Hero = ({ language }) => {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
         {/* Left side - Content */}
-        <div className="text-center md:text-left">
+        <motion.div 
+          className="text-center md:text-left"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <div className="mb-6 md:mb-8 animate-fade-in">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-maxim-dark mb-4">
               {t.headline}
@@ -83,10 +89,15 @@ const Hero = ({ language }) => {
             className="bg-maxim-dark hover:bg-maxim-brown text-white font-bold py-4 px-8 md:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-lg">
             {t.cta}
           </button>
-        </div>
+        </motion.div>
 
         {/* Right side - Product Image Placeholder */}
-        <div className="flex justify-center items-center animate-float">
+        <motion.div 
+          className="flex justify-center items-center animate-float"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           {/* Product box representation */}
 
           <img
@@ -97,7 +108,7 @@ const Hero = ({ language }) => {
             className="w-84 md:w-90 drop-shadow-xl"
           />
 
-        </div>
+        </motion.div>
       </div>
 
       {/* Scroll indicator */}

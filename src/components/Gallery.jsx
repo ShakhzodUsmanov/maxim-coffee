@@ -4,6 +4,7 @@ import coffeeSticks from "../assets/sticks.webp"
 import presentBox from "../assets/presentBox.webp"
 
 import { FaGift, FaBox, FaMugHot, FaWandMagicSparkles } from "react-icons/fa6";
+import { motion } from 'framer-motion';
 
 const Gallery = ({ language }) => {
   const translations = {
@@ -32,20 +33,36 @@ const Gallery = ({ language }) => {
       className="py-16 md:py-24 bg-maxim-cream px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-maxim-dark mb-4 text-center">
+        <motion.h2 
+          className="text-4xl md:text-5xl font-bold text-maxim-dark mb-4 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           {t.title}
-        </h2>
-        <p className="text-center text-maxim-brown text-lg mb-12">
+        </motion.h2>
+        <motion.p 
+          className="text-center text-maxim-brown text-lg mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           {t.subtitle}
-        </p>
+        </motion.p>
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {items.map((item) => {
+          {items.map((item, index) => {
             const IconComponent = item.emoji
-            return (<div
+            return (<motion.div
               key={item.id}
               className="relative group overflow-hidden rounded-2xl shadow-lg aspect-square bg-white cursor-pointer"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 * index }}
             >
               {/* Image Placeholder with Gradient */}
               <div className="w-full h-full bg-gradient-to-br from-maxim-yellow/80 to-maxim-brown/20 flex items-center justify-center group-hover:from-maxim-yellow/100 transition-all duration-300">
@@ -67,12 +84,18 @@ const Gallery = ({ language }) => {
                   </p>
                 </div>
               </div>
-            </div>)
+            </motion.div>)
           })}
         </div>
 
         {/* Telegram CTA */}
-        <div className="text-center mt-12">
+        <motion.div 
+          className="text-center mt-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
           <p className="text-maxim-dark mb-4">
             {language === 'ru'
               ? 'Еще фото в нашем Telegram'
@@ -86,7 +109,7 @@ const Gallery = ({ language }) => {
           >
             @MAXKOFFUZ
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

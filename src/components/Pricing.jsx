@@ -1,6 +1,7 @@
 import sticks250 from '../assets/sticks-250.webp'
 import sticks100 from '../assets/sticks-100.webp'
 import stick1 from '../assets/stick-1.webp'
+import { motion } from 'framer-motion';
 
 const Pricing = ({ language }) => {
   const translations = {
@@ -72,18 +73,34 @@ const Pricing = ({ language }) => {
       className="py-16 md:py-24 bg-gradient-to-b bg-maxim-yellow px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-maxim-dark text-center">
+        <motion.h2 
+          className="text-4xl md:text-5xl font-bold text-maxim-dark text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           {t.title}
-        </h2>
-        <p className="text-maxim-brown text-center mt-4 mb-12 md:text-lg max-w-3xl mx-auto">
+        </motion.h2>
+        <motion.p 
+          className="text-maxim-brown text-center mt-4 mb-12 md:text-lg max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           {t.subtitle}
-        </p>
+        </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {t.cards.map((card, index) => (
-            <article
+            <motion.article
               key={index}
               className={` bg-maxim-cream rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl `}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 * index }}
             >
               <div className="relative">
                 <img
@@ -107,7 +124,7 @@ const Pricing = ({ language }) => {
                   </p>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>

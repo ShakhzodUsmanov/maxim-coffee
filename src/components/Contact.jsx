@@ -1,4 +1,5 @@
 import { FaPhone, FaTelegram, FaMessage, FaInstagram } from "react-icons/fa6"
+import { motion } from 'framer-motion';
 
 const Contact = ({ language }) => {
   const translations = {
@@ -28,17 +29,35 @@ const Contact = ({ language }) => {
       className="py-16 md:py-24 bg-maxim-yellow px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-maxim-dark mb-4 text-center">
+        <motion.h2 
+          className="text-4xl md:text-5xl font-bold text-maxim-dark mb-4 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           {t.title}
-        </h2>
-        <p className="text-center text-maxim-brown mb-12 text-lg">
+        </motion.h2>
+        <motion.p 
+          className="text-center text-maxim-brown mb-12 text-lg"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           {t.subtitle}
-        </p>
+        </motion.p>
 
         {/* Contact Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Phone Contact */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-maxim-yellow/30 text-center">
+          <motion.div 
+            className="bg-white rounded-2xl p-8 shadow-lg border-2 border-maxim-yellow/30 text-center"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <FaPhone className="w-12 h-12 text-maxim-brown mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-maxim-dark mb-2">
               {language === 'ru' ? 'Телефон' : 'Telefon'}
@@ -55,10 +74,16 @@ const Contact = ({ language }) => {
             >
               {t.order}
             </a>
-          </div>
+          </motion.div>
 
           {/* Telegram/WhatsApp Contact */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-maxim-yellow/30 text-center">
+          <motion.div 
+            className="bg-white rounded-2xl p-8 shadow-lg border-2 border-maxim-yellow/30 text-center"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <FaMessage className="w-12 h-12 text-maxim-brown mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-maxim-dark mb-2">
               {language === 'ru' ? 'Мессенджеры' : 'Xabarlar'}
@@ -87,7 +112,7 @@ const Contact = ({ language }) => {
                 Instagram
               </a>
             </div>
-          </div>
+          </motion.div>
         </div>
 
 
