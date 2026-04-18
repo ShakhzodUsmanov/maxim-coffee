@@ -1,4 +1,4 @@
-import { FaPhone, FaTelegram, FaMessage, FaInstagram  } from "react-icons/fa6"
+import { FaPhone, FaTelegram, FaMessage, FaInstagram } from "react-icons/fa6"
 
 const Contact = ({ language }) => {
   const translations = {
@@ -70,21 +70,21 @@ const Contact = ({ language }) => {
             </p>
             <div className="flex gap-4 justify-center">
               <a
-                href="https://t.me/maxkoffuz"
+                href="https://t.me/us_muni"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Telegram Maxkoff"
                 className="flex items-center justify-center gap-3 bg-gradient-to-br from-blue-400 to-blue-600 text-white font-bold p-2 pr-4 rounded-full hover:shadow-lg transition-shadow"
               >
-                <FaTelegram className="w-10 h-10 text-white" /> Telegram  
+                <FaTelegram className="w-10 h-10 text-white" /> Telegram
               </a>
               <a
                 href="https://instagram.com/maxkoff.uz"
                 aria-label="Instagram Maxkoff"
                 className="flex items-center justify-center gap-3 bg-gradient-to-br from-pink-500 via-purple-500 to-orange-400 text-white font-bold p-2 pr-4 rounded-full hover:shadow-lg transition-shadow"
-              >  
-                <FaInstagram className="w-10 h-10" /> 
-                Instagram 
+              >
+                <FaInstagram className="w-10 h-10" />
+                Instagram
               </a>
             </div>
           </div>

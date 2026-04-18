@@ -79,7 +79,7 @@ const Gallery = ({ language }) => {
               : 'Bizning Telegram ko\'proq rasmlar'}
           </p>
           <a
-            href="https://t.me/maxcofuz"
+            href="https://t.me/maxkoffuz"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-gradient-to-r from-maxim-yellow to-maxim-brown text-white font-bold py-3 px-8 rounded-full hover:shadow-lg transition-shadow"
