@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Brand Yellow */
+  --maxim-yellow: #FFD400;
+  --maxim-yellow-hover: #F5CA00;
+  --maxim-yellow-light: #FFF6C4;
+  --maxim-yellow-glow: rgba(255, 212, 0, 0.35);
+
+  /* Deep Warm Coffee Palette */
+  --maxim-darker: #130B06;
+  --maxim-dark: #1E120A;
+  --maxim-dark-surface: #26170E;
+  --maxim-brown: #3D2817;
+  --maxim-brown-light: #5A3C23;
+  --maxim-brown-muted: #8A6A52;
+  --maxim-caramel: #C88D48;
+  --maxim-caramel-light: #E8AF6A;
+
+  /* Luxurious Cream Palette */
+  --maxim-cream: #FAF5EC;
+  --maxim-cream-soft: #F4EDE0;
+  --maxim-cream-card: #FFFFFF;
+  --maxim-beige: #F5E6D3;
+
+  /* Shadows */
+  --shadow-elevation-1: 0 4px 16px -2px rgba(30, 18, 10, 0.06), 0 2px 6px -1px rgba(30, 18, 10, 0.04);
+  --shadow-elevation-2: 0 12px 30px -4px rgba(30, 18, 10, 0.08), 0 4px 12px -2px rgba(30, 18, 10, 0.04);
+  --shadow-elevation-3: 0 24px 48px -8px rgba(30, 18, 10, 0.14), 0 8px 20px -4px rgba(30, 18, 10, 0.06);
+  --shadow-gold: 0 10px 30px -5px rgba(255, 212, 0, 0.4);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,56 +40,138 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+/* Lenis smooth scrolling compatibility */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   line-height: 1.6;
-  color: #2D1810;
-  background-color: #FBF6ED;
+  color: var(--maxim-dark);
+  background-color: var(--maxim-darker);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Steam wave effect */
-@keyframes steamWave {
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Sora', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Glassmorphism utility classes */
+.glass-header {
+  background: rgba(30, 18, 10, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 212, 0, 0.12);
+}
+
+.glass-card-dark {
+  background: linear-gradient(135deg, rgba(38, 23, 14, 0.85) 0%, rgba(25, 14, 8, 0.92) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(200, 141, 72, 0.2);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 230, 211, 0.8);
+}
+
+/* Shimmer animation effect for buttons & badges */
+@keyframes shimmerSweep {
   0% {
-    clip-path: polygon(0% 100%, 0% 100%, 0% 100%, 100% 100%);
-  }
-  25% {
-    clip-path: polygon(0% 100%, 0% 70%, 5% 50%, 95% 55%, 100% 75%, 100% 100%);
-  }
-  50% {
-    clip-path: polygon(0% 100%, 0% 50%, 10% 30%, 90% 35%, 100% 55%, 100% 100%);
-  }
-  75% {
-    clip-path: polygon(0% 100%, 0% 40%, 8% 15%, 92% 20%, 100% 45%, 100% 100%);
+    transform: translateX(-150%) skewX(-20deg);
   }
   100% {
-    clip-path: polygon(0% 100%, 0% 0%, 0% 0%, 100% 0%, 100% 100%);
+    transform: translateX(250%) skewX(-20deg);
   }
 }
 
-.steam-wave {
-  animation: steamWave 6s ease-in-out infinite;
-  background: rgba(255, 255, 255, 0.6);
-  position: absolute;
-  width: 100%;
-  height: 200px;
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
 }
 
-/* Smooth scrollbar */
+.shimmer-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmerSweep 3.5s infinite ease-in-out;
+  pointer-events: none;
+}
+
+/* Ambient radial glow helper */
+.ambient-glow-gold {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 212, 0, 0.2) 0%, rgba(200, 141, 72, 0.08) 50%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+/* Fluid Heading Utilities */
+.fluid-h1 {
+  font-size: clamp(2.4rem, 4.5vw + 1rem, 4.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.fluid-h2 {
+  font-size: clamp(2rem, 3vw + 0.8rem, 3.25rem);
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+}
+
+/* Refined Coffee Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #FBF6ED;
+  background: #190E07;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #FFD400;
-  border-radius: 5px;
+  background: #3D2817;
+  border-radius: 8px;
+  border: 2px solid #190E07;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3D2817;
+  background: #FFD400;
 }
